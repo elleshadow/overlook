@@ -1,3 +1,5 @@
+import { use } from "chai"
+
 const getAllCustomers = () => {
     fetch('http://localhost:3001/api/v1/customers')
         .then(response => {
@@ -12,39 +14,94 @@ const getAllCustomers = () => {
 
 const getCustomerByID = (id) => {
     if (!id || typeof(id) !== 'number') return 
-    fetch(`http://localhost:3001/api/v1/customers/${id}`)
+    return fetch(`http://localhost:3001/api/v1/customers/${id}`)
         .then(response => {
             if (response.ok) {
                 return response.json()
             } else {
                 throw Error(response.statusText)
             }
-        }).then(data => console.log(data))
+        })
         .catch(err => console.log(err))
 }
 
 const getAllRooms = () => {
-    fetch(`http://localhost:3001/api/v1/rooms`)
+   return fetch(`http://localhost:3001/api/v1/rooms`)
         .then(response => {
             if (response.ok) {
                 return response.json()
             } else {
                 throw Error(response.statusText)
             }
-        }).then(data => console.log(data))
+        }).then(data => data)
         .catch(err => console.log(err))
 }
 
 const getAllBookings = () => {
-    fetch(`http://localhost:3001/api/v1/bookings`)
-        .then(response => {
-            if (response.ok) {
-                return response.json()
-            } else {
-                throw Error(response.statusText)
-            }
-        }).then(data => console.log(data))
-        .catch(err => console.log(err))
+    return getAllRooms().then(rooms => {
+        return fetch(`http://localhost:3001/api/v1/bookings`)
+            .then(response => {
+                if (response.ok) {
+                    return response.json()
+                } else {
+                    throw Error(response.statusText)
+                }
+            }).then(data => {
+               return data.bookings.map(booking => {
+                   let currentRoom = rooms.rooms.find(room => {
+                      return room.number === booking.roomNumber
+                   })
+                    return {
+                        "id": booking.id,
+                        "userID": booking.userID,
+                        "date": booking.date,
+                        "roomNumber": booking.roomNumber,
+                        "roomType": currentRoom.roomType,
+                        "bidet": currentRoom.bidet,
+                        "bedSize": currentRoom.bedSize,
+                        "numBeds": currentRoom.numBeds,
+                        "costPerNight": currentRoom.costPerNight
+                    }
+                })
+            })
+            .catch(err => console.log(err))
+    })
+}
+
+const getBookingsById = (currentUserID) => {
+    if (!currentUserID || currentUserID < 1 || currentUserID > 50) return
+    return getAllRooms().then(rooms => {
+        return fetch(`http://localhost:3001/api/v1/bookings`)
+            .then(response => {
+                if (response.ok) {
+                    return response.json()
+                } else {
+                    throw Error(response.statusText)
+                }
+            }).then(data => {
+                return data.bookings.map(booking => {
+                    let currentRoom = rooms.rooms.find(room => {
+                        return room.number === booking.roomNumber
+                    })
+                    return {
+                        "id": booking.id,
+                        "userID": booking.userID,
+                        "date": Date.parse(booking.date),
+                        "roomNumber": booking.roomNumber,
+                        "roomType": currentRoom.roomType,
+                        "bidet": currentRoom.bidet,
+                        "bedSize": currentRoom.bedSize,
+                        "numBeds": currentRoom.numBeds,
+                        "costPerNight": currentRoom.costPerNight
+                    }
+                })
+            }).then(data => {
+               return data.filter(booking => {
+                    return booking.userID === currentUserID
+                })
+            })
+            .catch(err => console.log(err))
+    })
 }
 
 const addNewBooking = (userID, bookingDate, roomNumber) => {
@@ -85,4 +142,4 @@ const deleteBooking = (bookingID) => {
     }).catch(err => console.log(err))
 }
 
-export { getAllRooms, getCustomerByID, getAllCustomers, getAllBookings, addNewBooking, deleteBooking }
+export { getAllRooms, getCustomerByID, getAllCustomers, getAllBookings, getBookingsById, addNewBooking, deleteBooking }
