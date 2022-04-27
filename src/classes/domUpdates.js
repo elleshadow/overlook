@@ -51,11 +51,20 @@ let sortBookingsByRoomNumber = (bookings) => {
   });
 };
 
+let displayLoginScreen = () => {
+  document.querySelector(".login__user-name").value = "";
+  document.querySelector(".login__password").value = "";
+  currentUserDisplay.classList.add("hidden");
+  document.querySelector(".login").classList.remove("hidden");
+  return displayView("login-screen");
+};
+
 let displayView = (view) => {
   if (!view) return;
   resetViews();
   let selectedView = document.querySelector("." + view);
   selectedView.classList.remove("hidden");
+  return;
 };
 
 let resetViews = () => {
@@ -151,6 +160,7 @@ let createRoomCard = (
 };
 
 let displayUsername = (user) => {
+  currentUserDisplay.classList.remove("hidden");
   currentUserDisplay.innerText = user.name;
   currentUserDisplay.dataset.userId = user.id;
 };
@@ -283,5 +293,6 @@ export {
   displayBookings,
   displayUsername,
   displayBookingsByUserID,
+  displayLoginScreen,
   setCalendarLimits,
 };

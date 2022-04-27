@@ -124,7 +124,7 @@ body {
 }
 
 main {
-  background-color: #6200ee;
+  background-color: #0d47a1;
   color: #ffffff;
   border-radius: 1rem;
   -webkit-box-shadow: rgba(0, 0, 0, 0.55) -10px 5px 15px;
@@ -168,7 +168,7 @@ table th {
 }
 
 .invoice__title {
-  background-color: #03dac6;
+  background-color: #4caf50;
   color: #000000;
 }
 
@@ -180,7 +180,7 @@ table th {
 }
 
 .invoice__table__headder {
-  background-color: #03dac6;
+  background-color: #4caf50;
   color: #000000;
   padding: 1rem;
   z-index: 10;
@@ -228,7 +228,7 @@ table th {
 }
 
 .new-booking {
-  background-color: #018786;
+  background-color: #087f23;
   color: #ffffff;
 }
 
@@ -262,12 +262,12 @@ table th {
   letter-spacing: 1.25px;
   padding: 0.5em 1em;
   text-transform: uppercase;
-  background-color: #03dac6;
+  background-color: #4caf50;
   color: #000000;
   margin-top: 2.4rem;
   position: absolute;
-  right: 75px;
-  top: 20px;
+  right: 90px;
+  top: 60px;
   -webkit-transform: scale(1.3);
           transform: scale(1.3);
 }
@@ -281,7 +281,7 @@ table th {
   -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   cursor: pointer;
-  background-color: #018786;
+  background-color: #087f23;
   color: #ffffff;
 }
 
@@ -304,7 +304,7 @@ table th {
 }
 
 .nav__radio-btn:checked + label {
-  background-color: #6200ee;
+  background-color: #0d47a1;
   color: #ffffff;
   -webkit-animation: fadeIn 1s;
           animation: fadeIn 1s;
@@ -326,8 +326,8 @@ table th {
   background-color: transparent;
   border-bottom-right-radius: 11px;
   border: 0px;
-  -webkit-box-shadow: 1px 25px 0 0 #6200ee;
-          box-shadow: 1px 25px 0 0 #6200ee;
+  -webkit-box-shadow: 1px 25px 0 0 #0d47a1;
+          box-shadow: 1px 25px 0 0 #0d47a1;
   content: "";
   height: 50px;
   position: absolute;
@@ -348,8 +348,8 @@ table th {
   right: 0px;
   width: 25px;
   z-index: -1;
-  -webkit-box-shadow: 1px -25px 0 0 #6200ee, inset rgba(0, 0, 0, 0.05) -5px 5px 5px;
-          box-shadow: 1px -25px 0 0 #6200ee, inset rgba(0, 0, 0, 0.05) -5px 5px 5px;
+  -webkit-box-shadow: 1px -25px 0 0 #0d47a1, inset rgba(0, 0, 0, 0.05) -5px 5px 5px;
+          box-shadow: 1px -25px 0 0 #0d47a1, inset rgba(0, 0, 0, 0.05) -5px 5px 5px;
 }
 
 .book-a-room {
@@ -370,7 +370,7 @@ table th {
   letter-spacing: 1.25px;
   padding: 0.5em 1em;
   text-transform: uppercase;
-  background-color: #03dac6;
+  background-color: #4caf50;
   color: #000000;
 }
 
@@ -383,7 +383,7 @@ table th {
   -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   cursor: pointer;
-  background-color: #018786;
+  background-color: #087f23;
   color: #ffffff;
 }
 
@@ -403,7 +403,7 @@ table th {
   letter-spacing: 1.25px;
   padding: 0.5em 1em;
   text-transform: uppercase;
-  background-color: #03dac6;
+  background-color: #4caf50;
   color: #000000;
   background-color: grey;
   color: white;
@@ -418,18 +418,18 @@ table th {
   -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   cursor: pointer;
-  background-color: #018786;
+  background-color: #087f23;
   color: #ffffff;
 }
 
 .book-a-room__filter__radio + label:hover {
-  background-color: #018786;
+  background-color: #087f23;
   color: #ffffff;
   cursor: pointer;
 }
 
 .book-a-room__filter__radio:checked + label {
-  background-color: #03dac6;
+  background-color: #4caf50;
   color: #000000;
   border-radius: 1rem;
 }
@@ -442,6 +442,7 @@ table th {
   -webkit-animation: fadeIn 1s;
           animation: fadeIn 1s;
   border-radius: 1rem;
+  padding-top: 5px;
   display: -ms-grid;
   display: grid;
   grid-gap: 1rem;
@@ -450,7 +451,8 @@ table th {
   -ms-grid-rows: (minmax(0px, 280px))[minmax];
       grid-template-rows: repeat(minmax(3, auto-fit), minmax(0px, 280px));
   height: 508px;
-  overflow: scroll;
+  overflow-x: visible;
+  overflow-y: scroll;
 }
 
 .card {
@@ -469,6 +471,8 @@ table th {
       justify-content: space-around;
   padding: 1rem;
   position: relative;
+  -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.9), -1px -1px 2px #aaa, 1px 1px 2px #555;
+          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.9), -1px -1px 2px #aaa, 1px 1px 2px #555;
 }
 
 .card__review {
@@ -525,7 +529,7 @@ table th {
   letter-spacing: 1.25px;
   padding: 0.5em 1em;
   text-transform: uppercase;
-  background-color: #03dac6;
+  background-color: #4caf50;
   color: #000000;
   -ms-flex-item-align: end;
       align-self: flex-end;
@@ -541,7 +545,7 @@ table th {
   -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   cursor: pointer;
-  background-color: #018786;
+  background-color: #087f23;
   color: #ffffff;
 }
 
@@ -571,10 +575,134 @@ table th {
   position: absolute;
   -webkit-transform: rotate(-25deg);
           transform: rotate(-25deg);
+  z-index: 1;
 }
 
 .date {
   text-align: center;
+}
+
+.login-screen {
+  width: 100%;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.login-screen::before {
+  content: "Overlook Hotel";
+  color: #4caf50;
+  text-shadow: 1px 1px 1px #000000;
+  position: absolute;
+  top: 0;
+  font-size: 4em;
+  font-family: "Berkshire Swash", cursive;
+}
+
+.login-screen .login {
+  -webkit-animation: fadeIn 3s;
+          animation: fadeIn 3s;
+  height: 50%;
+  width: 50%;
+  padding: 4em 5em;
+}
+
+.login-screen .login__user-name {
+  background-color: transparent;
+  color: #4caf50;
+  font-size: 3em;
+  padding: .5em;
+  border: none;
+  border-bottom: #4caf50 2px solid;
+  z-index: 3;
+}
+
+.login-screen .login__user-name:focus::-webkit-input-placeholder {
+  color: transparent;
+  outline-color: #4caf50;
+}
+
+.login-screen .login__user-name:focus:-ms-input-placeholder {
+  color: transparent;
+  outline-color: #4caf50;
+}
+
+.login-screen .login__user-name:focus::-ms-input-placeholder {
+  color: transparent;
+  outline-color: #4caf50;
+}
+
+.login-screen .login__user-name:focus::placeholder {
+  color: transparent;
+  outline-color: #4caf50;
+}
+
+.login-screen .login__user-name.invalid {
+  border: 3px solid #c51162;
+}
+
+.login-screen .login__password {
+  background-color: transparent;
+  color: #4caf50;
+  font-size: 3em;
+  padding: .5em;
+  border: none;
+  border-bottom: #4caf50 2px solid;
+  z-index: 3;
+}
+
+.login-screen .login__password:focus::-webkit-input-placeholder {
+  color: transparent;
+  outline-color: #4caf50;
+}
+
+.login-screen .login__password:focus:-ms-input-placeholder {
+  color: transparent;
+  outline-color: #4caf50;
+}
+
+.login-screen .login__password:focus::-ms-input-placeholder {
+  color: transparent;
+  outline-color: #4caf50;
+}
+
+.login-screen .login__password:focus::placeholder {
+  color: transparent;
+  outline-color: #4caf50;
+}
+
+.login-screen .login__password.invalid {
+  border: 3px solid #c51162;
+}
+
+.login-screen .login__button {
+  border-radius: 1rem;
+  border: none;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 1.25px;
+  padding: 0.5em 1em;
+  text-transform: uppercase;
+  background-color: #4caf50;
+  color: #000000;
+  z-index: 3;
+  height: 20%;
+  margin-top: 20px;
+}
+
+.login-screen .login__button:active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.login-screen .login__button:hover {
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  cursor: pointer;
+  background-color: #087f23;
+  color: #ffffff;
 }
 
 .hidden {
