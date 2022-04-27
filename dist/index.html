@@ -17,18 +17,45 @@
         id="bookings"
         checked
       />
-      <label role="button" tabindex="0" for="bookings">Booking History</label>
+      <label class="nav__tab hidden" role="button" tabindex="0" for="bookings"
+        >Booking History</label
+      >
       <input
         class="button nav__radio-btn"
         type="radio"
         name="nav-buttons"
         id="book-a-room"
       />
-      <label role="button" tabindex="0" for="book-a-room">Book A Room</label>
+      <label
+        class="nav__tab hidden"
+        role="button"
+        tabindex="0"
+        for="book-a-room"
+        >Book A Room</label
+      >
     </div>
     <main class="main">
-      <button class="button nav__logout-btn random_user_button">log out</button>
+      <button class="button nav__logout-btn random_user_button hidden">
+        log out
+      </button>
       <h1 data-user-id="0" class="h4 username"></h1>
+      <section class="main__view login-screen hidden">
+        <section class="login card">
+          <input
+            class="login__user-name"
+            type="text"
+            name="user-name"
+            placeholder="Username"
+          />
+          <input
+            class="login__password"
+            type="password"
+            name="password"
+            placeholder="Password"
+          />
+          <button class="login__button">Login</button>
+        </section>
+      </section>
       <section class="main__view bookings hidden">
         <p class="total subtitle2"></p>
         <section class="invoice">
