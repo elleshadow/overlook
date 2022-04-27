@@ -1,47 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Overlook Hotel Customer Portal">
-  <title>Overlook Hotel</title>
-</head>
-<body>
-<!-- <nav>
-<button class="button home">home</button>
-</nav> -->
-<div class="left-sidebar">
-  <h1 class="site-title">Overlook</h1>
-  <button class="button login random_user_button">login</button>
-  <!-- <h2 class="overline">Navigation</h2> -->
-  <input class="button nav__radio" type="radio" name="nav-buttons" id="view-bookings" checked>
-  <label role="button" tabindex="0" for="view-bookings">Booking History</label>
-  <input class="button nav__radio"  type="radio" name="nav-buttons" id="view-book-a-room">
-  <label role="button" tabindex="0" for="view-book-a-room">book-a-room</label>
-</div>
-<main class="main">
-  <h1 class="h6 username"></h1>
-  <section class="view view-bookings hidden">
-    <p class="total subtitle2"></p>
-    <section class="invoice">
-      <!-- <h1 class="h1 invoice__title">invoice</h1> -->
-      <section class="invoice__table">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Overlook Hotel Customer Portal" />
+    <title>Overlook Hotel</title>
+  </head>
+  <body>
+    <div class="nav">
+      <h1 class="nav__title">Overlook</h1>
+      <input
+        class="button nav__radio-btn"
+        type="radio"
+        name="nav-buttons"
+        id="bookings"
+        checked
+      />
+      <label role="button" tabindex="0" for="bookings">Booking History</label>
+      <input
+        class="button nav__radio-btn"
+        type="radio"
+        name="nav-buttons"
+        id="book-a-room"
+      />
+      <label role="button" tabindex="0" for="book-a-room">Book A Room</label>
+    </div>
+    <main class="main">
+      <button class="button nav__logout-btn random_user_button">log out</button>
+      <h1 data-user-id="0" class="h4 username"></h1>
+      <section class="main__view bookings hidden">
+        <p class="total subtitle2"></p>
+        <section class="invoice">
+          <section class="invoice__table"></section>
+        </section>
       </section>
-      <lable class="date invoice__date"></lable>
-    </section>
-  </section>
-  <section class="view view-book-a-room hidden">
-    <input class="date-picker" type="date" value="2022-04-21" min="2022-04-21" max="2022-12-31">
-    <button class="button" id="get-available-rooms">Search</button>
-    <section class="filter-rooms"></section>
-    <section class="available-rooms"></section>
-  </section>
-</main>
-
-  
-  <!-- Do not include the scripts.js or class files here - it is done by the webpack server -->
-  <script src="bundle.js"></script>
-
-</body>
+      <section class="main__view book-a-room hidden">
+        <button class="button book-a-room__search" id="book-a-room__search">
+          Select a Date
+        </button>
+        <input class="book-a-room__date-picker" type="date" />
+        <section class="book-a-room__filter"></section>
+        <section class="book-a-room__grid-container available-rooms"></section>
+      </section>
+    </main>
+    <script src="bundle.js"></script>
+  </body>
 </html>
