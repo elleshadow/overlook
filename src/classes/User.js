@@ -1,8 +1,8 @@
 class User {
-    constructor(data) {
-        this.id = data.id;
-        this.name = data.name;
-        this.bookings = []
-    }
+  constructor(id, name) {
+    this.id = id;
+    this.name = name;
+    this.bookings = [];
+  }
 }
 export default User;
