@@ -14,17 +14,21 @@ Here is a general procedure for getting your project hosted on GitHub pages so y
 1. In the `package.json` file, within the `"repository"` object, edit the `"url"` value to be `"git+https://github.com/USERNAME/REPONAME.git"` where USERNAME and REPONAME are replaced with your GitHub username and your repository name, respectively
 1. In the `package.json` file, add the line: `"homepage": "http://USERNAME.github.io/REPONAME",` where USERNAME and REPONAME are replaced with your GitHub username and your repository name, respectively
 1. Add these two lines to the `scripts` section of the `package.json` file:
-  ```json
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist"
-  ```
+
+```json
+"predeploy": "npm run build",
+"deploy": "gh-pages -d dist"
+```
+
 1. In the terminal, run `npm install --save-dev gh-pages`
 1. You should see these lines of JSON added to your `package.json` file:
-  ```json
-  "devDependencies": {
-  "gh-pages": "^1.1.0"
-  }
-  ```
+
+```json
+"devDependencies": {
+"gh-pages": "^1.1.0"
+}
+```
+
 1. Run `npm run build` in the command line
 1. Run `npm run deploy` in the command line
 
