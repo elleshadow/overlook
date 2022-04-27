@@ -203,7 +203,6 @@ table th {
 }
 
 .invoice__table__row.past-booking {
-  color: gray;
   font-style: italic;
 }
 
